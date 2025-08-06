@@ -1,0 +1,167 @@
+# OCR评估框架 .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# OCR评估框架特定文件
+# 生成的报告
+data/reports/*.md
+data/reports/*.json
+data/reports/*.html
+
+# 处理输出
+data/outputs/*.json
+data/outputs/*.txt
+data/outputs/*.log
+
+# 模型缓存和临时文件
+*.cache
+.paddle/
+.paddleocr/
+.lmstudio/
+
+# 日志文件
+*.log
+logs/
+
+# 临时配置文件
+config_temp.yaml
+config_test.json
+local_config.*
+
+# 性能分析文件
+*.prof
+*.pstats
+
+# 备份文件
+*.bak
+*.backup
+*~
+
+# 测试生成的文件
+test_output/
+temp_test_*
+
+# 文档构建
+docs/_build/
+docs/build/
+
+# 开发环境
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# 环境变量文件
+.env.local
+.env.production
+.env.development
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+
+# 大文件和敏感数据
+# (如果有大型测试数据集，建议使用Git LFS)
+# *.jpg
+# *.png
+# *.tiff
+# data/large_dataset/
+
+# 本地实验文件
+experiments/
+scratch/
+playground/
+
+# 编译的消息文件
+*.mo
+
+# 打包文件
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# 系统文件
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db

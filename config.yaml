@@ -1,0 +1,62 @@
+# OCR评估框架配置文件
+# 配置格式：YAML
+
+# 模型配置
+models:
+  # PaddleOCR配置 - 针对工业字母数字编号优化
+  paddleocr:
+    use_doc_orientation_classify: false  # 禁用文档方向分类，小图片无需复杂预处理
+    use_doc_unwarping: false            # 禁用文档矫正，避免对简单文本图片过度处理
+    use_textline_orientation: false     # 禁用文本行方向分类
+    lang: 'en'                          # 使用英文模型，对字母数字混合文本效果更好
+    use_gpu: false                      # 是否使用GPU加速
+    
+  # Qwen2.5-VL多模态模型配置
+  qwen_vl:
+    model_name: 'qwen/qwen2.5-vl-7b'    # 模型名称
+    lmstudio_url: 'ws://localhost:1234'  # LMStudio WebSocket连接地址
+    temperature: 0.1                     # 生成温度，低温度提高一致性
+    max_tokens: 50                       # 最大生成Token数量
+
+# 评估配置
+evaluation:
+  accuracy_threshold: 0.95               # 准确率阈值
+  use_levenshtein: true                  # 使用Levenshtein编辑距离计算准确率
+  case_sensitive: true                   # 区分大小写
+
+# 日志配置
+logging:
+  level: 'INFO'                          # 日志级别: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file: null                             # 日志文件路径，null表示只输出到控制台
+
+# 输出配置
+output:
+  reports_dir: 'data/reports'            # 报告输出目录
+  results_dir: 'data/outputs'            # 结果输出目录  
+  report_format: 'markdown'              # 报告格式：markdown, json, html
+
+# 数据处理配置
+data:
+  images_dir: 'data/images'              # 图片数据目录
+  supported_formats: ['.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.webp']
+  max_image_size: 10485760               # 最大图片文件大小 (10MB)
+
+# 性能配置
+performance:
+  batch_size: 1                          # 批处理大小，OCR通常单张处理
+  timeout_seconds: 30                    # 单张图片处理超时时间（秒）
+  max_workers: 1                         # 最大并发工作数
+
+# 高级配置
+advanced:
+  # 文本后处理规则
+  text_cleaning:
+    remove_explanation_prefixes: true     # 移除解释性前缀
+    extract_alphanumeric_pattern: true    # 使用正则表达式提取字母数字模式
+    normalize_quotes: true                # 标准化引号字符
+    
+  # 提示词配置（仅对Qwen模型有效）
+  prompt_engineering:
+    use_few_shot: false                   # 是否使用few-shot learning
+    context_examples: []                  # 上下文示例列表
