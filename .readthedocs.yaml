@@ -16,8 +16,6 @@ python:
       path: .
       extra_requirements:
         - docs
-    - method: pip
-      path: requirements/requirements-docs.txt
 
 # 文档构建配置
 sphinx:

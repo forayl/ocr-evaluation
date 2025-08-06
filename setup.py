@@ -77,6 +77,11 @@ setup(
         "docs": [
             "Sphinx>=4.0.0",
             "sphinx-rtd-theme>=1.0.0",
+            "sphinx-autodoc-typehints>=1.12.0",
+            "sphinx-copybutton>=0.5.0",
+            "sphinx-tabs>=3.0.0",
+            "myst-parser>=0.18.0",
+            "Pygments>=2.10.0",
         ],
     },
     
