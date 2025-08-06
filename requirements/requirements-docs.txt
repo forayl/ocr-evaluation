@@ -1,0 +1,23 @@
+# 文档构建依赖项
+
+# Sphinx 核心
+Sphinx>=4.0.0
+sphinx-rtd-theme>=1.0.0
+
+# 扩展支持
+sphinx-autodoc-typehints>=1.12.0
+sphinx-copybutton>=0.5.0
+sphinx-tabs>=3.0.0
+
+# Markdown 支持
+myst-parser>=0.18.0
+
+# 代码高亮
+Pygments>=2.10.0
+
+# 图片处理
+Pillow>=8.0.0
+
+# 项目依赖（用于文档生成）
+PyYAML>=6.0
+numpy>=1.20.0 

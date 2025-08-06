@@ -1,0 +1,30 @@
+# Read the Docs 配置文件
+# 用于配置文档构建和部署
+
+version: 2
+
+# 构建配置
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.9"
+
+# Python 环境配置
+python:
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
+    - method: pip
+      path: requirements/requirements-docs.txt
+
+# 文档构建配置
+sphinx:
+  configuration: docs/conf.py
+  fail_on_warning: false
+
+# 文档格式
+formats:
+  - pdf
+  - epub 
